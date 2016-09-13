@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+
+    defaultConfig {
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId "com.udacity.gradle.builditbigger"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':javaJokes')
+    compile project(':imageactivity')
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'junit:junit:4.12'
+    androidTestCompile 'org.mockito:mockito-core:1.+'
+    //    androidTestCompile 'com.android.support:support-annotations:24.0.0'
+    //    androidTestCompile 'com.android.support.test:runner:0.5'
+    //    androidTestCompile 'com.android.support.test:rules:0.5'
+    // Added for AdMob
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.google.android.gms:play-services:9.2.0'
+    compile 'com.google.android.gms:play-services-ads:9.2.0'
+    compile 'com.google.android.gms:play-services-auth:9.2.0'
+    compile 'com.google.android.gms:play-services-gcm:9.2.0'
+}
+
+
+
+
+
+
+
