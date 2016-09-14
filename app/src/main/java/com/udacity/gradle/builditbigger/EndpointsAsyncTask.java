@@ -1,10 +1,15 @@
 package com.udacity.gradle.builditbigger;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.util.Pair;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.ak.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -16,12 +21,13 @@ import java.io.IOException;
 /**
  * Created by Amal Krishnan on 13-09-2016.
  */
-class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Integer, String> {
     private MyApi myApiService = null;
     private Context context;
 
     @Override
     protected String doInBackground(android.util.Pair<Context, String>... params) {
+
         if(myApiService == null) {  // Only do this once
 
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
@@ -48,5 +54,4 @@ class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
         myIntent.putExtra(Intent.EXTRA_TEXT,result);
         context.startActivity(myIntent);
     }
-
 }
