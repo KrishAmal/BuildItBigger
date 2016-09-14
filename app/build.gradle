@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
 
 
     defaultConfig {
@@ -51,18 +51,12 @@ dependencies {
     //    androidTestCompile 'com.android.support.test:rules:0.5'
     // Added for AdMob
     compile project(path: ':backend', configuration: 'android-endpoints')
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.google.android.gms:play-services:9.2.0'
     compile 'com.google.android.gms:play-services-ads:9.2.0'
     compile 'com.google.android.gms:play-services-auth:9.2.0'
     compile 'com.google.android.gms:play-services-gcm:9.2.0'
 }
-
-
-
-
-
-
 
 
 
