@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/XuMF369Vv9V6mnQZvCG5chqTX4s\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/XE8dYYi8v4bUOayMU5EB4AdwHrA\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -71,8 +71,8 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "GetJoke": {
+   "id": "GetJoke",
    "type": "object",
    "properties": {
     "data": {
@@ -82,19 +82,10 @@
   }
  },
  "methods": {
-  "myApi.sayHi": {
-   "id": "myApi.sayHi",
-   "parameters": {
-    "name": {
-     "type": "string",
-     "required": true
-    }
-   },
-   "parameterOrder": [
-    "name"
-   ],
+  "myApi.tellJoke": {
+   "id": "myApi.tellJoke",
    "returns": {
-    "$ref": "MyBean"
+    "$ref": "GetJoke"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

@@ -21,12 +21,12 @@ import java.io.IOException;
 /**
  * Created by Amal Krishnan on 13-09-2016.
  */
-class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Integer, String> {
+class EndpointAsyncTask extends AsyncTask<Context, Integer, String> {
     private MyApi myApiService = null;
     private Context context;
 
     @Override
-    protected String doInBackground(android.util.Pair<Context, String>... params) {
+    protected String doInBackground(Context... params) {
 
         if(myApiService == null) {  // Only do this once
 
@@ -36,11 +36,10 @@ class EndpointAsyncTask extends AsyncTask<Pair<Context, String>, Integer, String
             myApiService = builder.build();
         }
 
-        context = params[0].first;
-        String name = params[0].second;
+        context=params[0];
 
         try {
-            return myApiService.sayHi(name).execute().getData();
+           return myApiService.tellJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }

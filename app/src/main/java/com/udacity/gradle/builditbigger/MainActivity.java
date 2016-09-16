@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchLibraryActivity(View view){
         Joker joker=new Joker();
-        new EndpointAsyncTask().execute(new android.util.Pair<Context, String>(this,joker.getJoke()));
+        new EndpointAsyncTask().execute(this);
     }
 
 }

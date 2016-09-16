@@ -22,6 +22,7 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
+  compile project(':javaJokes')
   appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.28'
   compile 'com.google.appengine:appengine-endpoints:1.9.28'
   compile 'com.google.appengine:appengine-endpoints-deps:1.9.28'

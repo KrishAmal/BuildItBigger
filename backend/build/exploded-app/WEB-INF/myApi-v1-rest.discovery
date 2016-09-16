@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/XuMF369Vv9V6mnQZvCG5chqTX4s\"",
+ "etag": "\"zRMgE0l9nVDW4S28VYYcYQF9UW4/XE8dYYi8v4bUOayMU5EB4AdwHrA\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -13,10 +13,10 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://builditbigger-142617.appspot.com/_ah/api/myApi/v1/sayHi/",
- "basePath": "/_ah/api/myApi/v1/sayHi/",
+ "baseUrl": "https://builditbigger-142617.appspot.com/_ah/api/myApi/v1/",
+ "basePath": "/_ah/api/myApi/v1/",
  "rootUrl": "https://builditbigger-142617.appspot.com/_ah/api/",
- "servicePath": "myApi/v1/sayHi/",
+ "servicePath": "myApi/v1/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -73,8 +73,8 @@
   }
  },
  "schemas": {
-  "MyBean": {
-   "id": "MyBean",
+  "GetJoke": {
+   "id": "GetJoke",
    "type": "object",
    "properties": {
     "data": {
@@ -84,22 +84,12 @@
   }
  },
  "methods": {
-  "sayHi": {
-   "id": "myApi.sayHi",
-   "path": "{name}",
+  "tellJoke": {
+   "id": "myApi.tellJoke",
+   "path": "tellJoke",
    "httpMethod": "POST",
-   "parameters": {
-    "name": {
-     "type": "string",
-     "required": true,
-     "location": "path"
-    }
-   },
-   "parameterOrder": [
-    "name"
-   ],
    "response": {
-    "$ref": "MyBean"
+    "$ref": "GetJoke"
    },
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"
